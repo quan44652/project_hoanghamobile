@@ -1,0 +1,260 @@
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.back {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    font-size: 3.8rem;
+    color: #00483d;
+
+    span {
+        color: #555;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.no-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+
+    h6 {
+        color: #333;
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+}
+
+.cart-icon {
+    font-size: 7rem;
+    line-height: 6rem;
+    color: #00483d;
+    text-align: center;
+}
+
+.cart-layout {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.cart-info {
+    width: 60%;
+    padding-right: 80px;
+}
+
+
+.cart-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px #00000029;
+    padding: 15px;
+    position: relative;
+    margin-top: 16px;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2.3rem;
+    color: #fd475a;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+
+    h4 {
+        font-size: 1.3rem;
+        color: #333;
+    }
+
+
+}
+
+.product-price {
+    color: #fd475a;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 8px 0;
+    del {
+        color: #333;
+        font-weight: 400;
+        padding-left: 4px;
+    }
+}
+
+
+.product-img {
+    width: 126px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    label {
+        color: #888;
+        font-size: 1.1rem;
+        padding-bottom: 6px;
+    }
+
+    div {
+        display: flex;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #c4c4c4;
+        cursor: pointer;
+        background-color: #fff;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-top: 1px solid #c4c4c4;
+        border-bottom: 1px solid #c4c4c4;
+    }
+}
+
+.promotion {
+    padding: 0 24px;
+
+    span {
+        padding: 3px 6px;
+        font-size: 1.1rem;
+        background-color: #f7941e;
+        color: var(--white);
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 6px;
+        margin-top: 6px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+    }
+}
+
+.cart-total {
+flex-direction: column;
+p {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 700;
+}
+
+span {
+    color: #fd475a;
+}
+}
+
+.cart-form {
+    flex: 1;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    .note {
+        font-size: 1.3rem;
+        color: #aaa;
+        font-style: italic;
+        margin-bottom: 6px;
+    }
+
+
+}
+
+// .form-control {
+//     background-color: #e5e5e5;
+//     margin: 6px 0;
+//     width: 100%;
+//     padding: 6px 0;
+//     padding-left: 12px;
+//     border-radius: 4px;
+//     input {
+//         color: #444;
+//         background: none;
+//         font-size: 1.3rem;
+//         border: none;
+//         outline: none;
+//     }
+ 
+// }
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    width: 100%;
+
+    label {
+        font-size: 1.4rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        background-color: #e5e5e583;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 1.4rem;
+        border: 1px solid #e5e5e5;
+    }
+
+    .error {
+        border: 1px solid #fd475a;
+    }
+
+    p {
+        padding-left: 4px;
+        display: block;
+        font-size: 1.2rem;
+        color: #fd475a;
+        height: 12px
+    }
+}
+
+.button {
+    width: 100%;
+}

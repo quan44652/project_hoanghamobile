@@ -1,0 +1,123 @@
+.wrapper {
+   a {
+    line-height: 1.6rem;
+   }
+}
+
+.btn {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    border: none;
+    outline: none;
+    margin-top: 24px;
+    font-size: 1.3rem;
+    color: var(--white);
+    border-radius: 3px;
+    cursor: pointer;
+    span {
+        line-height: 1.3rem;
+    }
+
+    
+    &:hover {opacity: 0.8;}
+
+}
+
+.lager {
+    padding: 12px 24px;
+    width: 100%;
+    background: transparent linear-gradient(180deg,#ff990e 0%,#ff6801 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0 4px 6px #00000029;
+}
+
+
+.medium {
+    padding: 8px 24px;
+    width: 100%;
+    background: #00483d 0% 0% no-repeat padding-box;
+    text-transform: uppercase;
+        pointer-events: none;
+
+}
+
+.primary {
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    height: 42px;
+    width: 100%;
+    text-transform: uppercase;
+    background: linear-gradient(rgb(0, 153, 129) 0%, rgb(0, 72, 61) 100%) 0% 0% no-repeat padding-box padding-box transparent;
+}
+
+.backtotop {
+    background-color: #00483d;
+    color: var(--white);
+    min-width: 42px;
+    opacity: 0.9;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    margin-left: 44px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btn-facebook {
+    justify-content: start;
+    font-weight: bold;
+    padding: 14px 32px;
+    background: rgb(66, 103, 178);
+    position: relative;
+    padding-left: 32px;
+    width: 100%;
+    .icon {
+        position: absolute;
+        font-size: 4rem;
+        left: 1px;
+        top: 3px;
+    }
+
+    span {
+        padding-left: 12px;
+    }
+}
+
+.btn-google {
+    justify-content: start;
+    font-weight: bold;
+    padding: 14px 32px;
+    background: rgb(67, 133, 245);
+    position: relative;
+    padding-left: 32px;
+    width: 100%;
+    .icon {
+        position: absolute;
+        font-size: 4rem;
+        left: 2px;
+        top: 3px;
+    }
+
+    span {
+        padding-left: 12px;
+    }
+}
+
+.border {
+    background-color: transparent;
+    border: 1px solid #00483d;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    height: 42px;
+    width: 100%;
+    color: #222;
+    text-transform: uppercase;
+}

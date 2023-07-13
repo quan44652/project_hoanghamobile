@@ -1,0 +1,128 @@
+.wrapper {
+    width: 300px;
+    background-color: var(--white);
+    position: fixed;
+    height: 100%;
+    top: 30px;
+    left: 0;
+}
+
+.header {
+    padding: 30px;
+}
+.logo {
+    img {
+        width: 100%;
+    }
+}
+
+.info {
+    display: flex;
+    margin-top: 32px;
+    align-items: center;
+}
+
+.avata {
+    span {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background-color: #009981;
+        font-size: 3.6rem;
+        color: var(--white);
+        font-weight: bold;
+    }
+}
+
+.name {
+    padding-left: 16px;
+
+    h4 {
+        font-size: 1.6rem;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .change-avata {
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        label {
+            cursor: pointer;
+            color: #999;
+            font-size: 1.3rem;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        span {
+            font-size: 2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        &:hover label {
+            color: #333;
+        }
+    }
+
+}
+
+.menu {
+    list-style: none;
+
+    a {
+        display: block;
+        padding: 16px 0;
+        position: relative;
+        padding-left: 74px;
+        color: #c5c5c1;
+        font-weight: 600;
+
+        span {
+            position: absolute;
+            left: 30px;
+            top:10px;
+            font-size: 3rem;
+            min-width: 50px;
+        }
+
+        &:hover {
+            color: #191919;
+            span {
+                color: #009981;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                background-color: #00483D;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+    .active {
+        color: #191919;
+        span {
+            color: #009981;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #00483D;
+            right: 0;
+            top: 0;
+        }
+    }
+}
