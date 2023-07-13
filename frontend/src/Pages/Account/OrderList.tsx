@@ -1,89 +1,73 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import className from "classNames/bind";
+import Table from "../../Components/Table/Table";
 
 const cx = className.bind(styles);
+
+const columns = [
+  {
+    title: "#",
+    dataIndex: "key",
+    key: "key",
+    render: (item: any) => <strong>{item?.key}</strong>,
+  },
+  {
+    title: "Status",
+    dataIndex: "order_date",
+    key: "order_date",
+  },
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+  },
+  {
+    title: "Version",
+    dataIndex: "version",
+    key: "version",
+  },
+  {
+    title: "Color",
+    dataIndex: "color",
+    key: "color",
+  },
+  {
+    title: "Quantity",
+    dataIndex: "quantity",
+    key: "quantity",
+  },
+  {
+    title: "Price",
+    dataIndex: "price",
+    key: "price",
+  },
+  {
+    title: "Total",
+    dataIndex: "total",
+    key: "total",
+  },
+];
+
+const dataCourcer = [
+  {
+    id: 1,
+    key: 1,
+    order_date: "Chờ xét duyệt",
+    name: "Điện thoại di động iPhone 11 (64GB) - Chính hãng VN/A",
+    version: "512GB",
+    color: "Blue",
+    quantity: 2,
+    price: 1777777,
+    total: 3444444,
+  },
+];
 
 const YourOrderList = () => {
   return (
     <div className={cx("container")}>
       <h2>Đơn hàng của bạn</h2>
-      <table border={1} className="">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Trạng thái</th>
-            <th>Tên sản phẩm</th>
-            <th>Phiên bản</th>
-            <th>Màu sắc</th>
-            <th>SL</th>
-            <th>Giá tiền</th>
-            <th>Tổng(SLxG)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Đang chờ xét duyệt</td>
-            <td className={cx("name")}>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-              <button className={cx("btn")}>Hủy</button>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Đang chờ xét duyệt</td>
-
-            <td className={cx("name")}>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-              {" "}
-              <button className={cx("btn")}>Hủy</button>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Đang chờ xét duyệt</td>
-
-            <td className={cx("name")}>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-              {" "}
-              <button className={cx("btn")}>Hủy</button>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Đang chờ xét duyệt</td>
-            <td className={cx("name")}>
-              KM Giảm thêm 200.000đ cho tất các sản phẩm màn hình khi mua kèm
-              laptop, MacBook, máy tính bảng và điện thoại.
-            </td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-              {" "}
-              <button className={cx("btn")}>Hủy</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );
 };

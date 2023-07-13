@@ -10,14 +10,18 @@ const Table = ({ columns, dataCourcer }: any) => {
 
   const renderRow = dataCourcer.map((item: any) => {
     const renderCell = columns.map((column: any) => (
-      <td>{item[column.dataIndex]}</td>
+      <td key={column.key}>
+        {column.render ? column.render(item) : item[column.dataIndex]}
+      </td>
     ));
 
-    return <tr>{renderCell}</tr>;
+    return <tr key={item.id}>{renderCell}</tr>;
   });
   return (
     <table border={1} className={cx("wrapper")}>
-      <thead>{renderHeader}</thead>
+      <thead>
+        <tr>{renderHeader}</tr>
+      </thead>
       <tbody>{renderRow}</tbody>
     </table>
   );

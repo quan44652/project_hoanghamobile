@@ -19,6 +19,9 @@ import Regester from "./Pages/Auth/Regester";
 import Forget from "./Pages/Auth/Forget";
 import Dashboard from "./Pages/Account/Dashboard";
 import AdminProduct from "./Admin/Products/AdminProduct";
+import AdminDashboard from "./Admin/AdminDashboard";
+import AddProduct from "./Admin/Products/AddProduct";
+import TopNavigation from "./Layout/Components/TopNavigation/TopNavigation";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +62,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/regester" element={<Regester />} />
         <Route path="/forget" element={<Forget />} />
-        <Route path="/admin" element={<AdminProduct />}></Route>
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="products/add" element={<AddProduct />} />
+        </Route>
       </Routes>
 
       {isVisible && (

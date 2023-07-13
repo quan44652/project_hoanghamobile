@@ -1,5 +1,7 @@
 .wrapper {
     background-color: var(--primary);
+    position: relative;
+    z-index: 999;
 }
 
 .navbar {
