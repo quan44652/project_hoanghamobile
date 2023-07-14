@@ -51,7 +51,7 @@ const SideBar = ({ menu }: any) => {
                 to={item.url}
                 className={cx(index == selected && "active")}
               >
-                <span>{item.icon()}</span>
+                <span>{item.icon && item.icon()}</span>
                 {item.name}
               </Link>
             </li>

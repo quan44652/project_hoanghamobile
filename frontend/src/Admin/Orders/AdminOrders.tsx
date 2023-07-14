@@ -59,7 +59,7 @@ const dataCourcer = [
   },
 ];
 
-const AdminProduct = () => {
+const AdminOrders = () => {
   return (
     <div>
       <h2>Danh sách sản phẩm</h2>
@@ -68,4 +68,4 @@ const AdminProduct = () => {
   );
 };
 
-export default AdminProduct;
+export default AdminOrders;

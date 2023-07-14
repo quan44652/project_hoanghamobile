@@ -29,14 +29,13 @@ const Forget = () => {
               />
               <p>{errer && "Trường này không được để trống"}</p>
             </div>
+            <div className={cx("button-group")}>
+              <Button type="primary">Cấp lại mật khẩu</Button>
+              <Button to={"/"} type="border">
+                Trở về
+              </Button>
+            </div>
           </form>
-
-          <div className={cx("button-group")}>
-            <Button type="primary">Cấp lại mật khẩu</Button>
-            <Button to={"/"} type="border">
-              Trở về
-            </Button>
-          </div>
         </div>
       </div>
     </div>

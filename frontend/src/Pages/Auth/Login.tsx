@@ -55,14 +55,14 @@ const Login = () => {
               />
               <p>{errer && "Trường này không được để trống"}</p>
             </div>
+            <div className={cx("button-group")}>
+              <Button type="primary">Đăng nhập</Button>
+              <Button to={"/regester"} type="border">
+                Đăng ký
+              </Button>
+            </div>
           </form>
 
-          <div className={cx("button-group")}>
-            <Button type="primary">Đăng nhập</Button>
-            <Button to={"/regester"} type="border">
-              Đăng ký
-            </Button>
-          </div>
           <div className={cx("footer")}>
             <Link className={cx("back")} to={"/"}>
               <span>

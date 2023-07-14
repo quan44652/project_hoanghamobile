@@ -22,6 +22,19 @@ import AdminProduct from "./Admin/Products/AdminProduct";
 import AdminDashboard from "./Admin/AdminDashboard";
 import AddProduct from "./Admin/Products/AddProduct";
 import TopNavigation from "./Layout/Components/TopNavigation/TopNavigation";
+import EditCategory from "./Admin/Category/EditCategory";
+import AdminCategory from "./Admin/Category/AdminCategory";
+import AddCategory from "./Admin/Category/AddCategory";
+import AddPromotion from "./Admin/Promotions/AddPromotion";
+import EditPromotion from "./Admin/Promotions/EditPromotion";
+import AdminColor from "./Admin/Colors/AdminColor";
+import AddColor from "./Admin/Colors/AddColor";
+import EditColor from "./Admin/Colors/EditColor";
+import AdminOrders from "./Admin/Orders/AdminOrders";
+import AdminUsers from "./Admin/User/AdminUsers";
+import AdminVersion from "./Admin/Versions/AdminVersion";
+import AddVersion from "./Admin/Versions/AddVersion";
+import EditVersion from "./Admin/Versions/EditVersion";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +76,23 @@ function App() {
         <Route path="/regester" element={<Regester />} />
         <Route path="/forget" element={<Forget />} />
         <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="products" element={<AdminProduct />} />
           <Route path="products/add" element={<AddProduct />} />
+          <Route path="products/edit/:id" element={<EditCategory />} />
+          <Route path="category" element={<AdminCategory />} />
+          <Route path="category/add" element={<AddCategory />} />
+          <Route path="category/edit/:id" element={<EditCategory />} />
+          <Route path="promotions" element={<AdminCategory />} />
+          <Route path="promotions/add" element={<AddPromotion />} />
+          <Route path="promotions/edit/:id" element={<EditPromotion />} />
+          <Route path="colors" element={<AdminColor />} />
+          <Route path="colors/add" element={<AddColor />} />
+          <Route path="colors/edit/:id" element={<EditColor />} />
+          <Route path="versions" element={<AdminVersion />} />
+          <Route path="version/add" element={<AddVersion />} />
+          <Route path="version/edit/:id" element={<EditVersion />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="users" element={<AdminUsers />} />
         </Route>
       </Routes>
 

@@ -1,9 +1,9 @@
 import React from "react";
 import SideBar from "../Layout/Components/SideBar/SideBar";
-import { BiHistory, BiUser } from "react-icons/bi";
-import { AiOutlineHeart, AiOutlineImport } from "react-icons/ai";
+import { BiCategory, BiGitCompare } from "react-icons/bi";
+import { AiFillCodeSandboxCircle, AiOutlineImport } from "react-icons/ai";
 import { FaBoxOpen } from "react-icons/fa";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdOutlineSell, MdColorLens } from "react-icons/md";
 import { Outlet } from "react-router-dom";
 import className from "classNames/bind";
 import styles from "./style.module.scss";
@@ -20,33 +20,48 @@ const menu = [
   {
     id: 2,
     name: "Sản phẩm",
-    url: "/account/info",
-    icon: () => <BiUser />,
+    url: "/admin/products",
+    icon: () => <AiFillCodeSandboxCircle />,
     active: false,
   },
   {
     id: 3,
-    name: "Đơn hàng của bạn",
-    url: "/account/order",
-    icon: () => <FaBoxOpen />,
+    name: "Danh mục",
+    url: "/admin/category",
+    icon: () => <BiCategory />,
     active: false,
   },
   {
     id: 4,
-    name: "Lịch sử đặt hàng",
-    url: "/account/history",
-    icon: () => <BiHistory />,
+    name: "Khuyến mãi",
+    url: "/admin/promotions",
+    icon: () => <MdOutlineSell />,
     active: false,
   },
   {
     id: 5,
-    name: "Sản phẩm yêu thích",
-    url: "/account/wishlist",
-    icon: () => <AiOutlineHeart />,
+    name: "Đơn hàng",
+    url: "/admin/orders",
+    icon: () => <FaBoxOpen />,
     active: false,
   },
   {
     id: 6,
+    name: "Màu sắc",
+    url: "/admin/colors",
+    icon: () => <MdColorLens />,
+    active: false,
+  },
+  {
+    id: 7,
+    name: "Phiên bản",
+    url: "/admin/versions",
+    icon: () => <BiGitCompare />,
+    active: false,
+  },
+
+  {
+    id: 8,
     name: "Đăng xuất",
     url: "/",
     icon: () => <AiOutlineImport />,

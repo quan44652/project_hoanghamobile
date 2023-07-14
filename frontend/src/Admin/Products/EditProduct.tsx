@@ -6,7 +6,7 @@ import Select from "react-select";
 
 const cx = className.bind(styles);
 
-const AddProduct = () => {
+const EditProduct = () => {
   const [errer, setError] = useState(false);
 
   const options = [
@@ -37,7 +37,7 @@ const AddProduct = () => {
             <input
               onBlur={() => setError(!errer)}
               className={cx(errer && "error")}
-              type="file"
+              type="text"
             />
             <p>{errer && "Trường này không được để trống"}</p>
           </div>
@@ -111,4 +111,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

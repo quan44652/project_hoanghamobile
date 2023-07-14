@@ -1,6 +1,5 @@
 import React from "react";
 import Table from "../../Components/Table/Table";
-
 const columns = [
   {
     title: "#",
@@ -59,13 +58,12 @@ const dataCourcer = [
   },
 ];
 
-const AdminProduct = () => {
+const AdminCategory = () => {
   return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
-      <Table columns={columns} dataCourcer={dataCourcer} />
+      <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );
 };
 
-export default AdminProduct;
+export default AdminCategory;
