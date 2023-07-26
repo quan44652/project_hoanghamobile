@@ -61,6 +61,7 @@ const dataCourcer = [
 const AdminCategory = () => {
   return (
     <div>
+      <h2>Quản lý danh mục</h2>
       <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );

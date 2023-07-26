@@ -62,7 +62,7 @@ const dataCourcer = [
 const AdminUsers = () => {
   return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
+      <h2>Quản lý người dùng</h2>
       <Table columns={columns} dataCourcer={dataCourcer} />
     </div>
   );

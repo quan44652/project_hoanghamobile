@@ -25,6 +25,7 @@ const dataCourcer = [
 const AdminVersion = () => {
   return (
     <div>
+      <h2>Quản lý phiên bản</h2>
       <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );

@@ -27,7 +27,7 @@ const FlashSales = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: window.innerWidth > 768 ? 5 : 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -54,7 +54,7 @@ const FlashSales = () => {
             <Link to={"/"}>Đồng hồ/Phụ kiện/Khác</Link>
           </li>
         </ul>
-        <div className={cx("timer")}>
+        {/* <div className={cx("timer")}>
           <h1>
             <span>1</span>
             <span>1</span>
@@ -69,7 +69,7 @@ const FlashSales = () => {
             <span>1</span>
             <span>1</span>
           </h1>
-        </div>
+        </div> */}
       </div>
       <div className={cx("slider")}>
         <button onClick={() => handlerPrev()} className={cx("btn", "btn-left")}>

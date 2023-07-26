@@ -1,5 +1,11 @@
 import React from "react";
 import Table from "../../Components/Table/Table";
+import Button from "../../Components/Button/Button";
+import styles from "../style.module.scss";
+import className from "classNames/bind";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+
+const cx = className.bind(styles);
 
 const columns = [
   {
@@ -43,6 +49,19 @@ const columns = [
     dataIndex: "total",
     key: "total",
   },
+  {
+    title: "Option",
+    dataIndex: "option",
+    key: "option",
+    render: () => {
+      return (
+        <div className={cx("option")}>
+          <Button type="danger" icon={<AiOutlineDelete />}></Button>
+          <Button type="success" icon={<AiOutlineEdit />}></Button>
+        </div>
+      );
+    },
+  },
 ];
 
 const dataCourcer = [
@@ -62,7 +81,7 @@ const dataCourcer = [
 const AdminOrders = () => {
   return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
+      <h2>Danh sách đơn hàng</h2>
       <Table columns={columns} dataCourcer={dataCourcer} />
     </div>
   );

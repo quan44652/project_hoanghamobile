@@ -61,6 +61,7 @@ const dataCourcer = [
 const AdminPromotion = () => {
   return (
     <div>
+      <h2>Quản lý khuyến mãi</h2>
       <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );

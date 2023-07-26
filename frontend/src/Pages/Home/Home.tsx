@@ -10,6 +10,7 @@ import FlashSales from "../../Layout/Components/FlashSales/FlashSales";
 import Banner from "../../Layout/Components/Banner/Banner";
 import RecomendedForYou from "../../Layout/Components/RecomendedForYou/RecomendedForYou";
 import Footer from "../../Layout/Components/Footer/Footer";
+import HeaderMobile from "../../Layout/Components/Header/HeaderMobile";
 
 const cx = className.bind(styles);
 
@@ -54,7 +55,9 @@ const data = [
 const HomePage = () => {
   return (
     <div>
+      {/* {window.innerWidth > 768 ? <Header /> : <HeaderMobile />} */}
       <Header />
+      <HeaderMobile />
       <Navbar />
       <div className={cx("wrapper-slider")}>
         <Carousel type={"banner-silder"} data={data} />

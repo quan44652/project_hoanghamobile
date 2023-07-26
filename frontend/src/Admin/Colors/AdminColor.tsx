@@ -25,6 +25,7 @@ const dataCourcer = [
 const AdminColor = () => {
   return (
     <div>
+      <h2>Quản lý màu sắc</h2>
       <Table dataCourcer={dataCourcer} columns={columns} />
     </div>
   );

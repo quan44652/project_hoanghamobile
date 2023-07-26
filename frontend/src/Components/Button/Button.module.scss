@@ -9,7 +9,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
     border: none;
     outline: none;
     margin-top: 24px;
@@ -119,5 +118,30 @@
     height: 42px;
     width: 100%;
     color: #222;
+    text-transform: uppercase;
+}
+
+.danger {
+    background-color: #dd283b;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    height: 32px;
+    width: 40px;
+    color: var(--white);
+    text-transform: uppercase;
+   display: inline;
+   margin-right: 6px;
+}
+
+.success {
+   display: inline; 
+    background-color: #00483d;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    height:32px;
+    color: var(--white);
+    width: 40px;
     text-transform: uppercase;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import "./Components/GlobalStyles/GlobalStyles.scss";
 import HomePage from "./Pages/Home/Home";
 import ProductListPage from "./Pages/ProductListPage/ProductListPage";
 import ProductDetailPage from "./Pages/ProductDetailPage/ProductDetailPage";
@@ -89,8 +90,8 @@ function App() {
           <Route path="colors/add" element={<AddColor />} />
           <Route path="colors/edit/:id" element={<EditColor />} />
           <Route path="versions" element={<AdminVersion />} />
-          <Route path="version/add" element={<AddVersion />} />
-          <Route path="version/edit/:id" element={<EditVersion />} />
+          <Route path="versions/add" element={<AddVersion />} />
+          <Route path="versions/edit/:id" element={<EditVersion />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="users" element={<AdminUsers />} />
         </Route>

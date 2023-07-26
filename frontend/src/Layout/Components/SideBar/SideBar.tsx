@@ -24,7 +24,10 @@ const SideBar = ({ menu }: any) => {
         </Link>
         <div className={cx("info")}>
           <div className={cx("avata")}>
-            {/* <img src="" alt="" /> */}
+            {/* <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHZAq08u4YaR0Jsu2CgeptdxC74y-9QEeFYEAb6YHP&s"
+              alt=""
+            /> */}
             <span>A</span>
           </div>
 

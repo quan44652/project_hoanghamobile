@@ -10,7 +10,6 @@ const Footer = () => {
       <div className={cx("content")}>
         <div className={cx("content-link")}>
           <h1>Hỗ trợ - Dịch vụ </h1>
-
           <ul>
             <li>
               <a href="">Mua hàng trả góp</a>

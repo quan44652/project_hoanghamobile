@@ -191,3 +191,25 @@ background-color: transparent;
     z-index: 999;
 }
 
+@media screen and (max-width: 768px) {
+    .wrapper {
+       width: 100%;
+    }   
+
+    
+    .title {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding: 5px 40px 5px 75px;
+        margin-bottom: 12px;
+
+        &::after {
+            width: 22px;
+        }
+
+        &::before {
+            left: 22px;
+        }
+    }
+
+   }

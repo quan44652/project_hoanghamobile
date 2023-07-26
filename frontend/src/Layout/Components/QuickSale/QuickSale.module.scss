@@ -11,8 +11,25 @@
 
 .item-img {
     width: 25%;
+    margin: 0 6px;
 }
 
 .item-img img {
-    margin: 0 6px;
+    width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+       width: 100%;
+       padding: 0 2px;
+    }   
+      
+    .container {
+        margin: 0 -2px;
+    }
+    
+    .item-img {
+      
+        margin: 0 2px;
+    }
+   }
