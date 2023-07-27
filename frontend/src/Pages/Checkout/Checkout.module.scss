@@ -103,3 +103,29 @@ table {
     font-weight: 600;
  }
 }
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .order-info--layout {
+        color: #333;
+        font-size: 1.4rem;
+    
+        div {
+            display: flex;
+            flex-direction: column;
+            p {
+                width:100%
+            }
+        }
+        p {
+            line-height: 24px;
+        }
+        label {
+           display: inline-block;
+            width: 80px;  
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BsList } from "react-icons/bs";
 import styles from "./Header.module.scss";
 import className from "classNames/bind";
@@ -8,10 +8,18 @@ import { BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 const cx = className.bind(styles);
 const HeaderMobile = () => {
+  const modalRef = useRef(null);
+  const handlePopupModal = () => {
+    modalRef.current.style.display = "block";
+  };
+
+  const handleCloseModal = () => {
+    modalRef.current.style.display = "none";
+  };
   return (
     <div className={cx("header-mobile")}>
       <header>
-        <div className={cx("menu")}>
+        <div onClick={() => handlePopupModal()} className={cx("menu")}>
           <BsList />
         </div>
         <div className={cx("logo")}>
@@ -20,19 +28,19 @@ const HeaderMobile = () => {
             alt=""
           />
         </div>
-        <div className={cx("cart")}>
+        <Link to={"/cart"} className={cx("cart")}>
           <AiOutlineShoppingCart />
           <span>1</span>
-        </div>
+        </Link>
       </header>
       <div className={cx("search-mobile")}>
         <Search />
       </div>
 
-      <div className={cx("modal")}>
+      <div ref={modalRef} className={cx("modal")}>
         <div className={cx("overlay")}>
           <div className={cx("modal-menu")}>
-            <span className={cx("close")}>
+            <span onClick={() => handleCloseModal()} className={cx("close")}>
               <AiFillCloseCircle />
             </span>
             <div className={cx("account")}>

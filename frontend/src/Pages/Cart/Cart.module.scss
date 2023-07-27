@@ -33,6 +33,11 @@
         font-size: 1.5rem;
         padding: 12px;
     }
+
+    img {
+        width: 100%;
+        padding: 0 24px;
+    }
 }
 
 .cart-icon {
@@ -91,7 +96,9 @@
     font-size: 1.3rem;
     font-weight: bold;
     padding: 8px 0;
+
     del {
+        font-size: 1.1rem;
         color: #333;
         font-weight: 400;
         padding-left: 4px;
@@ -112,6 +119,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     label {
         color: #888;
         font-size: 1.1rem;
@@ -168,16 +176,17 @@
 }
 
 .cart-total {
-flex-direction: column;
-p {
-    font-size: 1.3rem;
-    color: #333;
-    font-weight: 700;
-}
+    flex-direction: column;
 
-span {
-    color: #fd475a;
-}
+    p {
+        font-size: 1.3rem;
+        color: #333;
+        font-weight: 700;
+    }
+
+    span {
+        color: #fd475a;
+    }
 }
 
 .cart-form {
@@ -202,23 +211,6 @@ span {
 
 
 }
-
-// .form-control {
-//     background-color: #e5e5e5;
-//     margin: 6px 0;
-//     width: 100%;
-//     padding: 6px 0;
-//     padding-left: 12px;
-//     border-radius: 4px;
-//     input {
-//         color: #444;
-//         background: none;
-//         font-size: 1.3rem;
-//         border: none;
-//         outline: none;
-//     }
- 
-// }
 
 .form-control {
     display: flex;
@@ -257,4 +249,76 @@ span {
 
 .button {
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .cart-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-info {
+        width: 100%;
+        padding: 6px;
+    }
+
+    .product-info {
+        width: 180px;
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+
+        del {
+            font-size: 1.1rem;
+        }
+    }
+
+
+    .product-img {
+        width: 100px;
+    }
+
+    .promotion {
+        padding: 0 24px;
+
+        p {
+            font-size: 1.1rem;
+
+        }
+    }
+
+    .cart-form {
+        padding: 0 24px;
+        flex: 1;
+        margin-top: 70px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .note {
+            font-size: 1.3rem;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+
+    }
 }

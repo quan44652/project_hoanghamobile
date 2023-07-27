@@ -16,137 +16,64 @@ const Navbar = () => {
       <ul className={cx("container")}>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faLaptop} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://cdn.icon-icons.com/icons2/2596/PNG/512/ad_product_icon_155850.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>
         <li>
           <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faLaptop} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faLaptop} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
-            <span className={cx("navbar-name")}>Điện thoại</span>
-          </Link>
-        </li>
-        <li>
-          <Link className={cx("navbar-link")} to={"/"}>
-            <span className={cx("navbar-icon")}>
-              <FontAwesomeIcon icon={faMobileScreenButton} />
-            </span>
+            <img
+              src="https://e7.pngegg.com/pngimages/770/95/png-clipart-hourglass-computer-icons-time-hourglass-angle-rectangle.png"
+              className={cx("navbar-icon")}
+            ></img>
             <span className={cx("navbar-name")}>Điện thoại</span>
           </Link>
         </li>

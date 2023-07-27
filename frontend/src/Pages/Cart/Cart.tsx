@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
+import HeaderMobile from "../../Layout/Components/Header/HeaderMobile";
 
 const cx = className.bind(styles);
 
@@ -17,7 +18,8 @@ const Cart = () => {
   const [isItem, setIsItem] = useState(false);
   return (
     <div>
-      <TopNavigation />
+      {window.innerWidth > 769 ? <TopNavigation /> : <HeaderMobile />}
+
       <div className={cx("wrapper")}>
         <Link to={"/"} className={cx("back")}>
           <AiOutlineLeft />
@@ -173,11 +175,11 @@ const Cart = () => {
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Số điện thoại *" />
-              <p></p>
+              <p>Trường này không được để trống</p>
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Email" />
-              <p></p>
+              <p>Trường này không được để trống</p>
             </div>
             <div className={cx("form-control")}>
               <input type="text" placeholder="Địa chỉ nhận hàng *" />
