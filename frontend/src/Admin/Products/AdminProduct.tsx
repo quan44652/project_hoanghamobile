@@ -3,6 +3,8 @@ import Table from "../../Components/Table/Table";
 import Button from "../../Components/Button/Button";
 import styles from "../style.module.scss";
 import className from "classNames/bind";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import { useGetProductsQuery } from "../../slice/product";
 
 const cx = className.bind(styles);
 
@@ -14,39 +16,32 @@ const columns = [
     render: (item: any) => <strong>{item?.key}</strong>,
   },
   {
-    title: "Order Date",
-    dataIndex: "order_date",
-    key: "order_date",
-  },
-  {
     title: "Name",
     dataIndex: "name",
     key: "name",
   },
   {
-    title: "Version",
-    dataIndex: "version",
-    key: "version",
+    title: "Image",
+    dataIndex: "image",
+    key: "image",
+    render: (item: any) => (
+      <img style={{ width: 60 }} src={item.image} alt="" />
+    ),
   },
   {
-    title: "Color",
-    dataIndex: "color",
-    key: "color",
+    title: "Price New",
+    dataIndex: "priceNew",
+    key: "priceNew",
   },
   {
-    title: "Quantity",
-    dataIndex: "quantity",
-    key: "quantity",
+    title: "Price Old",
+    dataIndex: "priceOld",
+    key: "priceOld",
   },
   {
-    title: "Price",
-    dataIndex: "price",
-    key: "price",
-  },
-  {
-    title: "Total",
-    dataIndex: "total",
-    key: "total",
+    title: "Category",
+    dataIndex: "category",
+    key: "category",
   },
   {
     title: "Option",
@@ -55,29 +50,36 @@ const columns = [
     render: () => {
       return (
         <div className={cx("option")}>
-          <Button type="danger">ahihi</Button>
-          <Button type="success">ahihi</Button>
+          <span>
+            <Button type="danger" icon={<AiOutlineDelete />}></Button>
+          </span>
+          <span>
+            <Button type="success" icon={<AiOutlineEdit />}></Button>
+          </span>
         </div>
       );
     },
   },
 ];
 
-const dataCourcer = [
-  {
-    id: 1,
-    key: 1,
-    order_date: "2/2/2022",
-    name: "Điện thoại di động iPhone 11 (64GB) - Chính hãng VN/A",
-    version: "512GB",
-    color: "Blue",
-    quantity: 2,
-    price: 1777777,
-    total: 3444444,
-  },
-];
-
 const AdminProduct = () => {
+  const { data: products }: any = useGetProductsQuery();
+  if (!products) {
+    return;
+  }
+
+  const dataCourcer = products.map((item: any, index: number) => ({
+    id: item._id,
+    key: index,
+    name: item.name,
+    priceNew: item.priceNew,
+    priceOld: item.priceOld,
+    category: item.categoryId.name,
+    image: item.image,
+  }));
+
+  console.log(dataCourcer);
+
   return (
     <div>
       <h2>Quản sản phẩm</h2>

@@ -82,22 +82,40 @@ const Footer = () => {
           <h1>Thanh toán miễn phí</h1>
           <ul className={cx("img-list")}>
             <li>
-              <img src="./src/assets/images/pay/logo-atm.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-visa.png"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src/assets/images/pay/logo-jcb.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-master.png"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src/assets/images/pay/logo-master.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-jcb.png"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src//assets/images/pay/logo-samsungpay.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-samsungpay.png"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src//assets/images/pay//logo-visa.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-atm.png"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src//assets/images/pay/logo-vnpay.png" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/logo-vnpay.png"
+                alt=""
+              />
             </li>
           </ul>
         </div>
@@ -105,14 +123,23 @@ const Footer = () => {
           <h1>Hình thức vận chuyển</h1>
           <ul className={cx("img-list")}>
             <li>
-              <img src="./src/assets/images/ship/vnpost.jpg" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/nhattin.jpg"
+                alt=""
+              />
             </li>
             <li>
-              <img src="./src/assets/images/ship//nhattin.jpg" alt="" />
+              <img
+                src="https://hoanghamobile.com/Content/web/img/vnpost.jpg"
+                alt=""
+              />
             </li>
           </ul>
           <div>
-            <img src="./src/assets/images/ship/logo-bct.png" alt="" />
+            <img
+              src="https://hoanghamobile.com/Content/web/img/logo-bct.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,11 @@
-import React from "react";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+import Button from "../../Components/Button/Button";
 import Table from "../../Components/Table/Table";
+import { useGetCategoriesQuery } from "../../slice/category";
+import styles from "../style.module.scss";
+import className from "classNames/bind";
+
+const cx = className.bind(styles);
 const columns = [
   {
     title: "#",
@@ -8,57 +14,43 @@ const columns = [
     render: (item: any) => <strong>{item?.key}</strong>,
   },
   {
-    title: "Order Date",
-    dataIndex: "order_date",
-    key: "order_date",
-  },
-  {
     title: "Name",
     dataIndex: "name",
     key: "name",
   },
   {
-    title: "Version",
-    dataIndex: "version",
-    key: "version",
-  },
-  {
-    title: "Color",
-    dataIndex: "color",
-    key: "color",
-  },
-  {
-    title: "Quantity",
-    dataIndex: "quantity",
-    key: "quantity",
-  },
-  {
-    title: "Price",
-    dataIndex: "price",
-    key: "price",
-  },
-  {
-    title: "Total",
-    dataIndex: "total",
-    key: "total",
-  },
-];
-
-const dataCourcer = [
-  {
-    id: 1,
-    key: 1,
-    order_date: "2/2/2022",
-    name: "Điện thoại di động iPhone 11 (64GB) - Chính hãng VN/A",
-    version: "512GB",
-    color: "Blue",
-    quantity: 2,
-    price: 1777777,
-    total: 3444444,
+    title: "Option",
+    dataIndex: "option",
+    key: "option",
+    render: () => {
+      return (
+        <div className={cx("option")}>
+          <span>
+            <Button type="danger" icon={<AiOutlineDelete />}></Button>
+          </span>
+          <span>
+            {" "}
+            <Button type="success" icon={<AiOutlineEdit />}></Button>
+          </span>
+        </div>
+      );
+    },
   },
 ];
 
 const AdminCategory = () => {
+  const { data: categories } = useGetCategoriesQuery();
+
+  if (!categories) {
+    return;
+  }
+
+  const dataCourcer = categories?.map((item: any, index: number) => ({
+    key: index,
+    id: item._id,
+    name: item.name,
+  }));
+
   return (
     <div>
       <h2>Quản lý danh mục</h2>

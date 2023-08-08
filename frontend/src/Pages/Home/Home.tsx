@@ -11,6 +11,7 @@ import Banner from "../../Layout/Components/Banner/Banner";
 import RecomendedForYou from "../../Layout/Components/RecomendedForYou/RecomendedForYou";
 import Footer from "../../Layout/Components/Footer/Footer";
 import HeaderMobile from "../../Layout/Components/Header/HeaderMobile";
+import { useGetProductsQuery } from "../../slice/product";
 
 const cx = className.bind(styles);
 
@@ -53,6 +54,8 @@ const data = [
 ];
 
 const HomePage = () => {
+  const { data: products } = useGetProductsQuery();
+
   return (
     <div>
       {/* {window.innerWidth > 768 ? <Header /> : <HeaderMobile />} */}
@@ -63,10 +66,10 @@ const HomePage = () => {
         <Carousel type={"banner-silder"} data={data} />
       </div>
       <QuickSale></QuickSale>
-      <FlashSales></FlashSales>
+      <FlashSales products={products}></FlashSales>
       <Banner url="https://cdn.hoanghamobile.com/i/home/Uploads/2023/06/05/tab-a8-1200x200.png"></Banner>
-      <RecomendedForYou></RecomendedForYou>
-      <ProductList></ProductList>
+      <RecomendedForYou products={products}></RecomendedForYou>
+      <ProductList products={products}></ProductList>
       <Footer></Footer>
     </div>
   );

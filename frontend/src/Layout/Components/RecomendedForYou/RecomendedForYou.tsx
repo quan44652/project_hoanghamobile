@@ -12,7 +12,7 @@ import {
 
 const cx = classNames.bind(styles);
 
-const RecomendedForYou = () => {
+const RecomendedForYou = ({ products }: any) => {
   const sliderRef = useRef(null);
 
   const handlerPrev = () => {
@@ -49,234 +49,40 @@ const RecomendedForYou = () => {
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
         <Slider {...settings} ref={sliderRef}>
-          <div className={cx("product-list")}>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-4_637945394047578938.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
+          {products?.map((item: any) => (
+            <div key={item._id} className={cx("product-list")}>
+              <div className={cx("wrapper-product")}>
+                <div className={cx("sticker")}>
+                  <img src={item.sticker} alt="" />
+                </div>
+                <div className={cx("img")}>
+                  <img src={item.image} alt="" />
+                </div>
+                <span className={cx("sales")}>
                   {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
+                  <FontAwesomeIcon
+                    className={cx("flash-icon")}
+                    icon={faBolt}
+                  />{" "}
+                  Giảm 1,800,000 ₫
                 </span>
-              </div>
-              {/* <p className={cx("note")}>
+                <div className={cx("info")}>
+                  <Link to={`/products/${item._id}`}>{item.name}</Link>
+                  <span>
+                    {" "}
+                    <strong>{item.priceNew.toLocaleString()} ₫</strong>{" "}
+                    {item.priceOld && (
+                      <del> {item.priceOld.toLocaleString()} ₫</del>
+                    )}
+                  </span>
+                </div>
+                {/* <p className={cx("note")}>
               <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
               <strong>và 5 km khác</strong>
             </p> */}
+              </div>
             </div>
-          </div>
-          <div>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/02/10/thumb.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
-                  {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
-                </span>
-              </div>
-              {/* <p className={cx("note")}>
-              <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
-              <strong>và 5 km khác</strong>
-            </p> */}
-            </div>
-          </div>
-          <div>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-4_637945394047578938.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
-                  {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
-                </span>
-              </div>
-              {/* <p className={cx("note")}>
-              <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
-              <strong>và 5 km khác</strong>
-            </p> */}
-            </div>
-          </div>
-          <div>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/02/10/thumb.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
-                  {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
-                </span>
-              </div>
-              {/* <p className={cx("note")}>
-              <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
-              <strong>và 5 km khác</strong>
-            </p> */}
-            </div>
-          </div>
-          <div>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-4_637945394047578938.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
-                  {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
-                </span>
-              </div>
-              {/* <p className={cx("note")}>
-              <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
-              <strong>và 5 km khác</strong>
-            </p> */}
-            </div>
-          </div>
-          <div>
-            <div className={cx("wrapper-product")}>
-              <div className={cx("sticker")}>
-                <img
-                  src="https://hoanghamobile.com/Content/web/sticker/hot.png"
-                  alt=""
-                />
-              </div>
-              <div className={cx("img")}>
-                <img
-                  src="https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/02/10/thumb.png"
-                  alt=""
-                />
-              </div>
-              <span className={cx("sales")}>
-                {" "}
-                <FontAwesomeIcon
-                  className={cx("flash-icon")}
-                  icon={faBolt}
-                />{" "}
-                Giảm 1,800,000 ₫
-              </span>
-              <div className={cx("info")}>
-                <Link to={"/"}>
-                  Redmi 10 5G (4GB/64GB) - Chính hãng edmi 10 5G (4GB/64GB) -
-                  Chính hãng
-                </Link>
-                <span>
-                  {" "}
-                  <strong>2999000 ₫</strong> <del> 4,790,000 ₫</del>
-                </span>
-              </div>
-              {/* <p className={cx("note")}>
-              <span>km</span> Ưu đãi đến 300.000đ khi mở Ví hoặc ...{" "}
-              <strong>và 5 km khác</strong>
-            </p> */}
-            </div>
-          </div>
+          ))}
         </Slider>
       </div>
     </div>

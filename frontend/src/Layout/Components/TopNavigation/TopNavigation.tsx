@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TopNavigation.module.scss";
 import classNames from "classNames/bind";
 import { Link } from "react-router-dom";
@@ -11,7 +11,16 @@ import { MdDashboard } from "react-icons/md";
 const cx = classNames.bind(styles);
 
 const TopNavigation = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const [user, setUser] = useState<any>({});
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user") as any));
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    console.log(123);
+  };
+
   return (
     <div className={cx("wrapper")}>
       <ul className={cx("navbar")}>
@@ -57,7 +66,8 @@ const TopNavigation = () => {
             Tra cứu đơn hàng{" "}
           </Link>
         </li>
-        {!isLogin && (
+
+        {!user && (
           <li>
             {" "}
             <Link className={cx("navbar_link")} to={"/login"}>
@@ -66,7 +76,7 @@ const TopNavigation = () => {
           </li>
         )}
 
-        {isLogin && (
+        {user && (
           <li>
             <Tippy
               placement={"bottom"}
@@ -116,12 +126,12 @@ const TopNavigation = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to={"/"}>
+                      <a onClick={() => handleLogout()} href={"/"}>
                         <span>
                           <AiOutlineImport />
                         </span>
                         Đăng xuất
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -132,7 +142,7 @@ const TopNavigation = () => {
                 <span>
                   <AiOutlineUser />
                 </span>{" "}
-                Nguyễn Anh Quân{" "}
+                {user.user?.name}
               </button>
             </Tippy>
           </li>

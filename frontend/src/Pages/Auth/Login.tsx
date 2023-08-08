@@ -7,12 +7,43 @@ import {
   AiFillGoogleCircle,
   AiOutlineArrowLeft,
 } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "react-toastify";
+import { useSigninMutation } from "../../slice/auth";
 
 const cx = className.bind(styles);
 
+const schema = yup.object({
+  email: yup.string().email().required(),
+  password: yup.string().required(),
+});
+
 const Login = () => {
-  const [errer, setError] = useState(false);
+  const [signin] = useSigninMutation();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data: any) => {
+    signin(data).then(({ data }: any) => {
+      if (data.message) {
+        localStorage.setItem("user", JSON.stringify(data));
+        toast.success(data.message);
+        navigate("/");
+        return;
+      }
+      toast.error(data.error);
+    });
+  };
+
   return (
     <div className={cx("wrapper")}>
       <div className={cx("container")}>
@@ -36,24 +67,24 @@ const Login = () => {
             <p>Hoặc</p>
           </div>
 
-          <form action="">
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className={cx("form-control")}>
               <label htmlFor="">Tài khoản</label>
               <input
-                onBlur={() => setError(!errer)}
-                className={cx(errer && "error")}
+                {...register("email")}
+                className={errors.email && cx("error")}
                 type="text"
               />
-              <p>{errer && "Trường này không được để trống"}</p>
+              <p>{errors.email?.message}</p>
             </div>
             <div className={cx("form-control")}>
               <label htmlFor="">Mật khẩu</label>
               <input
-                onBlur={() => setError(!errer)}
-                className={cx(errer && "error")}
+                {...register("password")}
+                className={errors.password && cx("error")}
                 type="text"
               />
-              <p>{errer && "Trường này không được để trống"}</p>
+              <p>{errors.password?.message}</p>
             </div>
             <div className={cx("button-group")}>
               <Button type="primary">Đăng nhập</Button>

@@ -31,13 +31,13 @@ const menu = [
     icon: () => <BiCategory />,
     active: false,
   },
-  {
-    id: 4,
-    name: "Khuyến mãi",
-    url: "/admin/promotions",
-    icon: () => <MdOutlineSell />,
-    active: false,
-  },
+  // {
+  //   id: 4,
+  //   name: "Khuyến mãi",
+  //   url: "/admin/promotions",
+  //   icon: () => <MdOutlineSell />,
+  //   active: false,
+  // },
   {
     id: 5,
     name: "Đơn hàng",
@@ -45,20 +45,20 @@ const menu = [
     icon: () => <FaBoxOpen />,
     active: false,
   },
-  {
-    id: 6,
-    name: "Màu sắc",
-    url: "/admin/colors",
-    icon: () => <MdColorLens />,
-    active: false,
-  },
-  {
-    id: 7,
-    name: "Phiên bản",
-    url: "/admin/versions",
-    icon: () => <BiGitCompare />,
-    active: false,
-  },
+  // {
+  //   id: 6,
+  //   name: "Màu sắc",
+  //   url: "/admin/colors",
+  //   icon: () => <MdColorLens />,
+  //   active: false,
+  // },
+  // {
+  //   id: 7,
+  //   name: "Phiên bản",
+  //   url: "/admin/versions",
+  //   icon: () => <BiGitCompare />,
+  //   active: false,
+  // },
 
   {
     id: 8,

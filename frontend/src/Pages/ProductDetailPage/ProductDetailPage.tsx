@@ -7,63 +7,56 @@ import Navbar from "../../Layout/Components/Navbar/Navbar";
 import Footer from "../../Layout/Components/Footer/Footer";
 import Carousel from "../../Layout/Components/Slider/Slider";
 import Button from "../../Components/Button/Button";
+import { useGetProductQuery } from "../../slice/product";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAddToCartMutation } from "../../slice/cart";
+import { toast } from "react-toastify";
 
-const data = {
-  name: "Điện thoại di động iPhone 11 (64GB) - Chính hãng VN/A",
-  price_new: 10390000,
-  price_old: 11390000,
-  img_list: [
-    "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/03/09/image-removebg-preview-2.png",
-    "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2021/09/15/image-removebg-preview-12.png",
-  ],
-  product_option: [
-    {
-      id: 1,
-      color: "Red",
-      version: "512GB",
-    },
-    {
-      id: 2,
-      color: "Blue",
-      version: "1TB",
-    },
-    {
-      id: 3,
-      color: "Green",
-      version: "128GB",
-    },
-    {
-      id: 4,
-      color: "Pink",
-      version: "64GB",
-    },
-    {
-      id: 5,
-      color: "Starlight",
-      version: "216`GB",
-    },
-  ],
-};
+const img_list = [
+  "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/03/09/image-removebg-preview-2.png",
+  "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2021/09/15/image-removebg-preview-12.png",
+];
 
 const cx = className.bind(style);
 const ProductDetailPage = () => {
+  const [user, setUser] = useState<any>({});
+
+  const [addToCart] = useAddToCartMutation();
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user") as any));
+  }, []);
+  const { id } = useParams();
+  const { data: product }: any = useGetProductQuery(id);
+
+  const handleAddtoCart = () => {
+    const newItem = {
+      userId: user.user._id,
+      productId: product._id,
+      quantity: 1,
+    };
+    addToCart(newItem).then(({ data }: any) => toast.success(data.message));
+  };
+
   return (
     <div>
       <Header />
       <Navbar />
       <div className={cx("wrapper")}>
         <div className={cx("product-images")}>
-          <Carousel data={data.img_list} type="product-image" />
+          <Carousel data={img_list} type="product-image" />
         </div>
         <div className={cx("product-info")}>
-          <h2 className={cx("name")}>
-            Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A
-          </h2>
+          <h2 className={cx("name")}>{product?.name}</h2>
           <div className={cx("price")}>
-            <h4>6,999,999 ₫ </h4>
-            <span>
-              <del>15490000</del> ₫ |Gía đã bao gồm VAT
-            </span>
+            <h4>{product?.priceNew.toLocaleString()} ₫ </h4>
+            {product?.priceOld && (
+              <span>
+                <del>{product.priceOld.toLocaleString()}</del> ₫ |Gía đã bao gồm
+                VAT
+              </span>
+            )}
           </div>
           <Button type="medium" icon={<FaShippingFast />}>
             Miễn phí vận chuyển toàn quốc
@@ -127,9 +120,12 @@ const ProductDetailPage = () => {
               </p>
             </div>
           </div>
-          <Button type="lager" icon={<AiOutlineShoppingCart />}>
-            Thêm giỏ hàng
-          </Button>
+          <span onClick={() => handleAddtoCart()}>
+            {" "}
+            <Button type="lager" icon={<AiOutlineShoppingCart />}>
+              Thêm giỏ hàng
+            </Button>
+          </span>
         </div>
       </div>
       <Footer />

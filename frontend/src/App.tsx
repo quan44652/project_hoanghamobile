@@ -61,8 +61,8 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/san-pham" element={<ProductListPage />} />
-        <Route path="/san-pham/1" element={<ProductDetailPage />} />
+        <Route path="/category/:id" element={<ProductListPage />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order" element={<Order />} />
